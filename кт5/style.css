@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.car {
+    width: 200px;
+    height: 100px;
+    background-color: #908;
+    position: relative;
+    animation: drive 3s forwards;
+}
+
+.car::before,
+.car::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    bottom: -20px;
+}
+
+.car::before {
+    left: 30px;
+}
+
+.car::after {
+    right: 30px;
+}
+
+.car::before,
+.car::after {
+    background-color: #000;
+}
+
+.car::before {
+    left: 30px;
+}
+
+.car::after {
+    right: 30px;
+}
+
+@keyframes drive {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(calc(100vw - 250px));
+    }
+}
